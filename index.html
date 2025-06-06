@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peter Dingue</title>
+
+    <!-- Favicon using your downloaded image -->
+    <link rel="icon" type="image/png" href="jellyfish.png">
+    <link rel="apple-touch-icon" href="jellyfish.png">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <nav>
+            <button class="tab-btn active" data-tab="projects">Projects</button>
+            <button class="tab-btn" data-tab="about">About</button>
+            <button class="tab-btn" data-tab="interests">Interests</button>
+            <button class="tab-btn" data-tab="links">Links</button>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <span class="name-header">Peter D. Dingue</span>
+
+            <!-- Updated theme toggle -->
+            <div class="toggle-container">
+                <label for="switch" class="toggle">
+                    <input type="checkbox" class="input" id="switch" />
+                    <div class="icon icon--moon">
+                        <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                width="32"
+                                height="32"
+                        >
+                            <path
+                                    fill-rule="evenodd"
+                                    d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                                    clip-rule="evenodd"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div class="icon icon--sun">
+                        <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                width="32"
+                                height="32"
+                        >
+                            <path
+                                    d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
+                            ></path>
+                        </svg>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <!-- Projects Tab -->
+    <div id="projects" class="tab-content active">
+        <article class="project">
+            <div class="project-header">
+                <h3 class="project-title">AES-128-Core</h3>
+            </div>
+            <p class="project-description">
+                A System on Chip implementation with an integrated AES-128 encryption core that I built to explore hardware-based cryptography.
+                The project includes testing through encryption/decryption operations and running encrypted programs to understand how hardware security works in practice.
+            </p>
+            <div class="project-links">
+                <a href="https://github.com/DDI-0/AES-128-Core" target="_blank">GitHub</a>
+            </div>
+        </article>
+
+        <article class="project">
+            <div class="project-header">
+                <h3 class="project-title">Correctional-Power-Analysis-AES-128</h3>
+            </div>
+            <p class="project-description">
+                A power analysis attack implementation that demonstrates how variations in power consumption can reveal secret keys in AES-128 hardware.
+                I modified existing CPA software to extract key data and generate correlation plots, providing a practical example of side-channel vulnerabilities.
+            </p>
+            <div class="project-links">
+                <a href="https://github.com/DDI-0/Correctional-Power-Analysis-AES-128" target="_blank">GitHub</a>
+            </div>
+        </article>
+
+        <article class="project">
+            <div class="project-header">
+                <h3 class="project-title">TRNG-Seeded Trivium Stream Cipher</h3>
+            </div>
+            <p class="project-description">
+                A hardware implementation of the Trivium stream cipher for generating cryptographically secure random numbers.
+                The core integrates into an SoC with Linux kernel module control, and I tested the output randomness using statistical analysis tools.
+            </p>
+            <div class="project-links">
+                <a href="https://github.com/DDI-0/Trivium-Core" target="_blank">GitHub</a>
+            </div>
+        </article>
+
+        <article class="project">
+            <div class="project-header">
+                <h3 class="project-title">Random Number Generation Using RO-PUF</h3>
+            </div>
+            <p class="project-description">
+                This project focuses on implementing a ring oscillator-based physical unclonable function (RO-PUF) using VHDL on an Intel Cyclone V SoC FPGA.
+                The goal was to build a CSPRNG by leveraging manufacturing process variations for entropy, and to expose the design to the Cortex-A9 processor via a memory-mapped interface.
+                The project included RTL design, IP core packaging, SoC integration, and PUF characterization using Hamming distance metrics.
+            </p>
+            <div class="project-links">
+                <a href="https://github.com/DDI-0/Random-Number-Generation-I-Physical-Unclonable-Functions" target="_blank">GitHub</a>
+            </div>
+        </article>
+
+        <article class="project">
+            <div class="project-header">
+                <h3 class="project-title">ADC-Temperature-Sensor</h3>
+            </div>
+            <p class="project-description">
+                The project involves designing a system to safely transfer temperature data between different clock domains using FIFO synchronizers and Gray code conversion.
+                It includes interfacing an ADC for temperature measurement and driving seven-segment displays.
+            </p>
+            <div class="project-links">
+                <a href="https://github.com/DDI-0/ADC-Temperature-Sensor-7-Segment-Display" target="_blank">GitHub</a>
+            </div>
+        </article>
+
+        <article class="project">
+            <div class="project-header">
+                <h3 class="project-title">Scrolling Message Display</h3>
+            </div>
+            <p class="project-description">
+                The project uses SystemVerilog to create a message display on the DE10-Lite board by slowing the clock to a human-visible rate, storing messages in ROM as ASCII, and converting them for a 7-segment display.
+                It features scrolling logic that smoothly moves the message using a circular buffer and dynamic windowing.
+            </p>
+            <div class="project-links">
+                <a href="https://github.com/DDI-0/Message-Display" target="_blank">GitHub</a>
+            </div>
+        </article>
+    </div>
+
+    <!-- About Tab -->
+    <div id="about" class="tab-content">
+        <h1>About</h1>
+        <p class="tagline">Aspiring FPGA Engineer</p>
+
+        <div class="about-content">
+            <p>
+                I'm a Computer Engineering graduate currently enrolled in a Master's program, primarily focused on FPGA design. In addition to this, I've worked on hardware verification, embedded systems, and hardware security through academic projects and coursework. I have hands-on experience in RTL design using VHDL, simulation and testbench development with GHDL and Cocotb, and navigating the full FPGA development flow—from synthesis to implementation and timing analysis. I'm particularly interested in designing high-performance, reliable hardware systems where efficiency, precision, and low-latency operation are critical. I enjoy working at the intersection of hardware and low-level software, where system behavior can be fine-tuned from the ground up.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Interests Tab -->
+    <div id="interests" class="tab-content">
+        <h1>Interests</h1>
+        <p class="tagline">Things that inspire and drive my creative work</p>
+
+        <div class="interests-list">
+            <div class="interest-item-large">
+                <h3>
+                    Real-time FPGA architecture for 3D reconstruction from integral images
+                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S1047320309001308" target="_blank" class="interest-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15,3 21,3 21,9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </h3>
+                <p>A hardware architecture for real-time 3D surface reconstruction from Integral Images using parallel processing elements in a systolic array to handle computationally intensive calculations at high throughput rates.</p>
+            </div>
+
+            <div class="interest-item-large">
+                <h3>
+                    Learning a Probabilistic Latent Space of Object Shapes
+                    via 3D Generative-Adversarial Modeling
+                    <a href="http://3dgan.csail.mit.edu" target="_blank" class="interest-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15,3 21,3 21,9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </h3>
+                <p>A 3D Generative Adversarial Network (3D-GAN) that generates high-quality 3D objects from probabilistic input using volumetric convolutional networks, enabling unsupervised 3D object synthesis and recognition without requiring reference images or CAD models.</p>
+            </div>
+
+            <div class="interest-item-large">
+                <h3>
+                    The Unpatchable Silicon: A Full Break of the Bitstream Encryption of Xilinx 7-Series FPGAs
+                    <a href="https://www.usenix.org/conference/usenixsecurity20/presentation/ender" target="_blank" class="interest-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15,3 21,3 21,9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </h3>
+                <p>A low-cost attack against Xilinx FPGA bitstream encryption that exploits a design flaw to use the FPGA as a decryption oracle, requiring only configuration interface access to completely break authenticity and confidentiality protections.</p>
+            </div>
+
+            <div class="interest-item-large">
+                <h3>
+                    csrGen: Automated CSRs for
+                    ASIC/FPGA Processor Interfaces
+                    <a href="https://asics.chuckbenz.com/csrGenUsersManual.pdf" target="_blank" class="interest-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15,3 21,3 21,9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </h3>
+                <p>A tool that automatically generates synthesizable Verilog RTL code for processor memory-mapped registers from simple templates, streamlining ASIC/FPGA development while reducing errors and supporting documentation and verification workflows.</p>
+            </div>
+
+            <div class="interest-item-large">
+                <h3>
+                    Quantized Neural Networks for FPGA Inference
+                    <a href="https://www.intel.com/content/www/us/en/products/docs/programmable/fpga-ai-quantization-white-paper.html" target="_blank" class="interest-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15,3 21,3 21,9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </h3>
+                <p>A low precision quantization approach using block floating point (BFP) for neural networks that maintains high dynamic range and accuracy while reducing resource usage, with open source retraining tools to recover any accuracy loss.</p>
+            </div>
+
+            <div class="interest-item-large">
+                <h3>
+                    6G White Paper on Machine Learning in
+                    Wireless Communication Networks
+                    <a href="https://arxiv.org/pdf/2004.13875" target="_blank" class="interest-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15,3 21,3 21,9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </h3>
+                <p>A white paper exploring how machine learning will enable 6G wireless networks to support digital transformation through ubiquitous connectivity, covering ML applications across network layers and zero-touch optimization approaches for next-generation wireless systems.</p>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <!-- Links Tab -->
+    <div id="links" class="tab-content">
+        <h1>Links</h1>
+        <p class="tagline">Connect with me across the web</p>
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>Email</strong><br>
+                <a href="mailto:Peter_Dingue@student.uml.edu">Contact</a>
+            </div>
+            <div class="contact-item">
+                <strong>LinkedIn</strong><br>
+                <a href="https://www.linkedin.com/in/peterdingue/" target="_blank">Profile</a>
+            </div>
+            <div class="contact-item">
+                <strong>GitHub</strong><br>
+                <a href="https://github.com/DDI-0" target="_blank">Profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
